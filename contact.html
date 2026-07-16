@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Webicares</title>
+<meta name="description" content="Get in touch with Webicares for a free digital marketing or website audit. We reply within 4 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="webicares-style.css">
+
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="index.html" class="logo"><span class="dot"></span>Webicares</a>
+    <div class="nav-links">
+      <a href="services-seo.html">Services</a>
+      <a href="webicares-pricing.html">Pricing</a>
+      <a href="portfolio.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:+917676000369" class="nav-call">📞 +91 76760 00369</a>
+      <a href="contact.html" class="btn btn-outline">Get Free Audit</a>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="services-seo.html">Services</a>
+    <a href="webicares-pricing.html">Pricing</a>
+    <a href="portfolio.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+917676000369">📞 +91 76760 00369</a>
+    <a href="contact.html" class="btn btn-primary">Get Free Audit</a>
+  </div>
+</header>
+
+<div class="page-hero wrap">
+  <span class="eyebrow">Get in touch</span>
+  <h1>Let's talk about growing your business</h1>
+  <p>Fill out the form and we'll get back to you within 4 hours — or reach us directly below.</p>
+</div>
+
+<section>
+  <div class="wrap grid-2" style="align-items:flex-start;">
+    <div class="form-card reveal">
+      <form id="contactForm" novalidate>
+        <div class="field" id="f-name">
+          <label>Name <span class="req">*</span></label>
+          <input type="text" name="name" minlength="2" required>
+          <span class="error-msg">Please enter your name (min 2 characters).</span>
+        </div>
+        <div class="field" id="f-email">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="email" required>
+          <span class="error-msg">Please enter a valid email address.</span>
+        </div>
+        <div class="field" id="f-phone">
+          <label>Phone <span class="req">*</span></label>
+          <input type="tel" name="phone" pattern="[0-9]{10}" required>
+          <span class="hint">10-digit mobile number</span>
+          <span class="error-msg">Please enter a valid 10-digit phone number.</span>
+        </div>
+        <div class="field">
+          <label>Business Name</label>
+          <input type="text" name="business">
+        </div>
+        <div class="field" id="f-service">
+          <label>Service Interested In <span class="req">*</span></label>
+          <select name="service" required>
+            <option value="">Select a service</option>
+            <option>SEO</option>
+            <option>Google Ads</option>
+            <option>Meta Ads</option>
+            <option>Website Development</option>
+            <option>Not Sure Yet</option>
+          </select>
+          <span class="error-msg">Please select a service.</span>
+        </div>
+        <div class="field">
+          <label>Budget Range</label>
+          <select name="budget">
+            <option value="">Select a range</option>
+            <option>Under ₹10,000/mo</option>
+            <option>₹10,000 – ₹30,000/mo</option>
+            <option>₹30,000 – ₹75,000/mo</option>
+            <option>₹75,000+/mo</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Message</label>
+          <textarea name="message" rows="4"></textarea>
+        </div>
+        <div class="field" id="f-consent">
+          <label class="checkbox-row"><input type="checkbox" name="consent" required> I agree to be contacted by Webicares regarding my inquiry. <span class="req">*</span></label>
+          <span class="error-msg">Please provide consent to be contacted.</span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message</button>
+        <div class="form-success" id="formSuccess">Thanks! Your message has been received — we'll reach out within 4 hours.</div>
+      </form>
+    </div>
+
+    <div class="reveal">
+      <div class="card" style="margin-bottom:20px;">
+        <h3 style="font-size:1.1rem; margin-bottom:14px;">Reach us directly</h3>
+        <p style="color:var(--slate); font-size:0.92rem; margin-bottom:10px;">📞 <a href="tel:+917676000369">+91 76760 00369</a></p>
+        <p style="color:var(--slate); font-size:0.92rem; margin-bottom:10px;">💬 <a href="https://wa.me/917676000369" target="_blank">WhatsApp Chat</a></p>
+        <p style="color:var(--slate); font-size:0.92rem; margin-bottom:10px;">✉️ hello@webicares.com</p>
+        <p style="color:var(--slate); font-size:0.92rem;">📍 Bangalore, India</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:1.1rem; margin-bottom:10px;">Response time</h3>
+        <p style="color:var(--slate); font-size:0.9rem;">We reply within 4 hours during business hours (Mon–Sat, 10 AM – 7 PM IST).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    let valid = true;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const service = form.service.value;
+    const consent = form.consent.checked;
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRe = /^[0-9]{10}$/;
+
+    function toggleError(id, condition){
+      const el = document.getElementById(id);
+      el.classList.toggle('error', !condition);
+      if(!condition) valid = false;
+    }
+    toggleError('f-name', name.length >= 2);
+    toggleError('f-email', emailRe.test(email));
+    toggleError('f-phone', phoneRe.test(phone));
+    toggleError('f-service', service !== '');
+    toggleError('f-consent', consent);
+
+    if(valid){
+      document.getElementById('formSuccess').classList.add('show');
+      form.reset();
+    }
+  });
+</script>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Webicares</div>
+        <p class="tagline">Websites, SEO, Google Ads &amp; Meta Ads for growing businesses in Bangalore.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="portfolio.html">Our Work</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services-seo.html">SEO</a></li>
+          <li><a href="services-google-ads.html">Google Ads</a></li>
+          <li><a href="services-meta-ads.html">Meta Ads</a></li>
+          <li><a href="services-web-development.html">Website Development</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>+91 76760 00369</li>
+          <li>hello@webicares.com</li>
+          <li>Bangalore, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Webicares Digital Agency. All rights reserved.</span>
+      <span><a href="legal-privacy-policy.html">Privacy</a> &middot; <a href="legal-terms.html">Terms</a> &middot; <a href="legal-cookie-policy.html">Cookies</a> &middot; <a href="legal-disclaimer.html">Disclaimer</a> &middot; <a href="legal-refund-policy.html">Refund</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/917676000369" class="wa-float" title="Chat on WhatsApp" target="_blank">💬</a>
+<div class="mobile-cta">
+  <a href="tel:+917676000369" class="call">📞 Call</a>
+  <a href="https://wa.me/917676000369" class="wa" target="_blank">💬 WhatsApp</a>
+</div>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(burgerBtn){
+    burgerBtn.addEventListener('click', ()=>{
+      const isOpen = mobileMenu.classList.toggle('open');
+      burgerBtn.textContent = isOpen ? '✕' : '☰';
+      burgerBtn.setAttribute('aria-expanded', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link=>{
+      link.addEventListener('click', ()=>{
+        mobileMenu.classList.remove('open');
+        burgerBtn.textContent = '☰';
+      });
+    });
+  }
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+  const seen = new Map();
+  document.querySelectorAll('.reveal').forEach(el=>{
+    const parent = el.parentElement;
+    const idx = seen.get(parent) || 0;
+    el.style.transitionDelay = Math.min(idx * 80, 320) + 'ms';
+    seen.set(parent, idx + 1);
+  });
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

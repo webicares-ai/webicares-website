@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Websites &amp; Digital Marketing Plans | Webicares</title>
+<meta name="description" content="Simple, transparent pricing for websites and digital marketing. Starter website plans from ₹4,999/year. No hidden fees, no long contracts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1F2A; --ink-soft:#132C3A; --surface:#F5F7F5; --surface-alt:#ECEFEA;
+    --teal:#146B63; --teal-deep:#0D4B45; --coral:#FF6B4A; --coral-soft:#FFE3DA;
+    --slate:#4A5568; --slate-light:#8A94A0; --white:#FFFFFF; --radius:14px; --max:1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter', sans-serif; color:var(--ink); background:var(--surface); line-height:1.5;}
+  h1,h2,h3,h4{font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:999px; font-weight:600; font-size:0.95rem; cursor:pointer; border:none; transition:transform .15s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--coral); color:var(--white); box-shadow:0 8px 20px rgba(255,107,74,0.35);}
+  .btn-outline{background:transparent; color:var(--ink); border:1.5px solid var(--ink);}
+  .eyebrow{font-family:'IBM Plex Mono'; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); font-weight:500; display:inline-block; margin-bottom:14px;}
+
+  header{position:sticky; top:0; z-index:100; background:rgba(245,247,245,0.92); backdrop-filter:blur(10px); border-bottom:1px solid rgba(11,31,42,0.08);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .logo{font-family:'Space Grotesk'; font-weight:700; font-size:1.3rem; display:flex; align-items:center; gap:6px;}
+  .logo .dot{width:8px; height:8px; border-radius:50%; background:var(--coral); display:inline-block;}
+  .nav-links{display:flex; align-items:center; gap:32px; font-weight:500; font-size:0.95rem;}
+  .nav-links a:hover{color:var(--teal);}
+  @media(max-width:900px){.nav-links{display:none;}}
+
+  .page-hero{padding:70px 0 40px; text-align:center;}
+  .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); margin-bottom:14px;}
+  .page-hero p{color:var(--slate); font-size:1.05rem; max-width:560px; margin:0 auto;}
+
+  .toggle-row{display:flex; justify-content:center; gap:8px; margin:36px 0 50px;}
+  .toggle-btn{padding:10px 22px; border-radius:999px; border:1.5px solid rgba(11,31,42,0.15); background:var(--white); font-weight:600; font-size:0.9rem; cursor:pointer;}
+  .toggle-btn.active{background:var(--ink); color:var(--white); border-color:var(--ink);}
+
+  .plans{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:70px;}
+  .plan-card{background:var(--white); border-radius:20px; padding:34px 28px; border:1.5px solid rgba(11,31,42,0.08); position:relative;}
+  .plan-card.featured{border-color:var(--coral); box-shadow:0 20px 50px rgba(255,107,74,0.15); transform:scale(1.03);}
+  .ribbon{position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--coral); color:white; font-size:0.72rem; font-weight:700; padding:6px 16px; border-radius:999px; white-space:nowrap;}
+  .plan-name{font-family:'IBM Plex Mono'; font-size:0.8rem; color:var(--teal-deep); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;}
+  .plan-price{font-family:'Space Grotesk'; font-size:2.4rem; font-weight:700; margin-bottom:4px;}
+  .plan-price sup{font-size:0.95rem; font-weight:600;}
+  .plan-desc{color:var(--slate); font-size:0.88rem; margin-bottom:22px;}
+  .plan-card ul{list-style:none; margin-bottom:26px;}
+  .plan-card ul li{padding:9px 0 9px 26px; position:relative; font-size:0.9rem; border-bottom:1px dashed rgba(11,31,42,0.08);}
+  .plan-card ul li::before{content:"✓"; position:absolute; left:0; color:var(--teal); font-weight:700;}
+  .plan-card .btn{width:100%; justify-content:center;}
+  .plan-card.featured .btn{background:var(--coral);}
+  @media(max-width:900px){.plans{grid-template-columns:1fr;} .plan-card.featured{transform:none;}}
+
+  .compare-wrap{overflow-x:auto; margin-bottom:80px;}
+  table{width:100%; border-collapse:collapse; background:var(--white); border-radius:14px; overflow:hidden; min-width:640px;}
+  th,td{padding:16px 20px; text-align:left; font-size:0.9rem; border-bottom:1px solid rgba(11,31,42,0.06);}
+  th{font-family:'Space Grotesk'; background:var(--ink); color:var(--white); font-weight:600;}
+  td:not(:first-child), th:not(:first-child){text-align:center;}
+  tr:last-child td{border-bottom:none;}
+  .yes{color:var(--teal); font-weight:700;}
+  .no{color:var(--slate-light);}
+
+  .faq-list{max-width:760px; margin:0 auto 90px;}
+  .faq-item{border-bottom:1px solid rgba(11,31,42,0.1);}
+  .faq-q{width:100%; text-align:left; background:none; border:none; padding:20px 0; font-family:'Space Grotesk'; font-size:1rem; font-weight:600; display:flex; justify-content:space-between; align-items:center; cursor:pointer;}
+  .faq-q .icon{color:var(--coral); font-size:1.2rem; transition:transform .25s;}
+  .faq-item.open .faq-q .icon{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .faq-a p{padding-bottom:20px; color:var(--slate); font-size:0.92rem;}
+
+  .final-cta{background:var(--ink); color:var(--white); border-radius:24px; padding:56px 40px; text-align:center; margin-bottom:90px;}
+  .final-cta h2{font-size:clamp(1.5rem,3vw,2rem); margin-bottom:12px;}
+  .final-cta p{color:rgba(255,255,255,0.75); margin-bottom:26px;}
+
+  .wa-float{position:fixed; bottom:24px; right:24px; z-index:150; width:56px; height:56px; border-radius:50%; background:#25D366; color:white; display:flex; align-items:center; justify-content:center; font-size:1.5rem; box-shadow:0 10px 24px rgba(0,0,0,0.25);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav wrap">
+    <a href="index.html" class="logo"><span class="dot"></span>Webicares</a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="#" style="color:var(--teal);">Pricing</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a href="index.html#contact" class="btn btn-outline">Get Free Audit</a>
+  </nav>
+</header>
+
+<section class="page-hero wrap">
+  <span class="eyebrow">Pricing</span>
+  <h1>Simple pricing. No surprises.</h1>
+  <p>Whether you need a professional website or a full growth engine — pick the plan that fits where your business is today.</p>
+</section>
+
+<div class="wrap">
+  <div class="toggle-row">
+    <button class="toggle-btn active" id="tab-website">Website Plans</button>
+    <button class="toggle-btn" id="tab-marketing">Marketing Plans</button>
+  </div>
+
+  <!-- WEBSITE PLANS -->
+  <div id="panel-website">
+    <div class="plans">
+      <div class="plan-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">₹4,999<sup>/yr</sup></div>
+        <p class="plan-desc">A professional website to get your business online, fast.</p>
+        <ul>
+          <li>Up to 3 pages</li>
+          <li>Mobile-friendly design</li>
+          <li>WhatsApp chat button</li>
+          <li>Search-engine ready</li>
+          <li>1 content update/year</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+      </div>
+      <div class="plan-card featured">
+        <span class="ribbon">MOST POPULAR</span>
+        <div class="plan-name">Business</div>
+        <div class="plan-price">₹6,499<sup>/yr</sup></div>
+        <p class="plan-desc">A complete website for a business ready to build trust and generate leads.</p>
+        <ul>
+          <li>Up to 6 pages</li>
+          <li>Domain included (1st year)</li>
+          <li>Contact form + Maps embed</li>
+          <li>Google Business Profile setup</li>
+          <li>2 content updates/year</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Growth</div>
+        <div class="plan-price">₹9,999<sup>/yr</sup></div>
+        <p class="plan-desc">For businesses ready to publish content and rank seriously on Google.</p>
+        <ul>
+          <li>Up to 10 pages + blog</li>
+          <li>Domain included (1st year)</li>
+          <li>Advanced on-page SEO</li>
+          <li>Priority support (48-hr)</li>
+          <li>4 content updates/year</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+
+    <div class="compare-wrap">
+      <table>
+        <tr><th>Feature</th><th>Starter</th><th>Business</th><th>Growth</th></tr>
+        <tr><td>Pages included</td><td>3</td><td>6</td><td>10 + blog</td></tr>
+        <tr><td>Mobile-friendly design</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Domain included (yr 1)</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>WhatsApp chat button</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Contact form + Maps</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Google Business Profile setup</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Advanced SEO (schema, sitemap)</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+        <tr><td>Content updates / year</td><td>1</td><td>2</td><td>4</td></tr>
+        <tr><td>Support response time</td><td>Standard</td><td>Standard</td><td>48-hr priority</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MARKETING PLANS -->
+  <div id="panel-marketing" style="display:none;">
+    <div class="plans">
+      <div class="plan-card">
+        <div class="plan-name">Foundation</div>
+        <div class="plan-price mono" style="font-size:1.3rem;">Custom Quote</div>
+        <p class="plan-desc">On-page SEO setup + one Google Ads campaign for new businesses.</p>
+        <ul>
+          <li>On-page SEO + GA4 setup</li>
+          <li>1 Google Ads (Search) campaign</li>
+          <li>Monthly performance report</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Talk to Us</a>
+      </div>
+      <div class="plan-card featured">
+        <span class="ribbon">MOST POPULAR</span>
+        <div class="plan-name">Momentum</div>
+        <div class="plan-price mono" style="font-size:1.3rem;">Custom Quote</div>
+        <p class="plan-desc">Full SEO + Google Ads + Meta Ads for businesses ready to scale.</p>
+        <ul>
+          <li>Full technical + local SEO</li>
+          <li>Google Ads (Search, Display, Remarketing)</li>
+          <li>Meta Ads (Facebook + Instagram)</li>
+          <li>Bi-weekly reporting calls</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Talk to Us</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Domination</div>
+        <div class="plan-price mono" style="font-size:1.3rem;">Custom Quote</div>
+        <p class="plan-desc">Multi-location SEO, advanced SEM, and dedicated account management.</p>
+        <ul>
+          <li>Multi-location / franchise SEO</li>
+          <li>Advanced SEM + CRO sprints</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-primary">Talk to Us</a>
+      </div>
+    </div>
+    <p style="text-align:center; color:var(--slate); font-size:0.9rem; margin-bottom:70px;">Marketing plans are quoted based on ad spend and competitive landscape. <a href="index.html#contact" style="color:var(--teal-deep); font-weight:600;">Request a free audit</a> for exact pricing.</p>
+  </div>
+
+  <div class="section-head" style="text-align:center; margin-bottom:40px;">
+    <span class="eyebrow" style="display:block;">Pricing FAQ</span>
+    <h2>Questions about plans &amp; billing</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Is there a setup fee on top of the annual price? <span class="icon">+</span></button>
+      <div class="faq-a"><p>No — the annual price shown covers design, build, and hosting for the year. No separate setup fee.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What happens when I need to renew? <span class="icon">+</span></button>
+      <div class="faq-a"><p>We'll notify you 30 days before renewal. Renewing keeps your hosting, support, and any included domain active without interruption.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I upgrade plans later? <span class="icon">+</span></button>
+      <div class="faq-a"><p>Yes — you can move from Starter to Business or Growth at any time; we'll prorate the difference.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you offer refunds? <span class="icon">+</span></button>
+      <div class="faq-a"><p>See our Refund Policy for full details — generally, refunds are available before development work begins.</p></div>
+    </div>
+  </div>
+
+  <div class="final-cta">
+    <h2>Not sure which plan fits?</h2>
+    <p>Tell us about your business and we'll recommend the right one — no pressure.</p>
+    <a href="index.html#contact" class="btn btn-primary">Get a Free Recommendation →</a>
+  </div>
+</div>
+
+<a href="#" class="wa-float" title="Chat on WhatsApp">💬</a>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){ item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+    });
+  });
+
+  const tabWebsite = document.getElementById('tab-website');
+  const tabMarketing = document.getElementById('tab-marketing');
+  const panelWebsite = document.getElementById('panel-website');
+  const panelMarketing = document.getElementById('panel-marketing');
+  tabWebsite.addEventListener('click', ()=>{
+    tabWebsite.classList.add('active'); tabMarketing.classList.remove('active');
+    panelWebsite.style.display='block'; panelMarketing.style.display='none';
+  });
+  tabMarketing.addEventListener('click', ()=>{
+    tabMarketing.classList.add('active'); tabWebsite.classList.remove('active');
+    panelMarketing.style.display='block'; panelWebsite.style.display='none';
+  });
+</script>
+
+</body>
+</html>
